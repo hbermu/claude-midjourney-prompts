@@ -173,7 +173,7 @@ The user works with two main styles:
 2. The user will download the upscaled image and add it to `images/` in the repo.
 3. File naming convention: `images/[name-lowercase]-[pose].png` (e.g., `images/isis-base.png`, `images/isis-fireball.png`). For groups, join names with a hyphen: `images/isis-kael-talking.png`.
 4. The permanent GitHub raw URL to store in `Characters.csv` follows this pattern:
-   `https://raw.githubusercontent.com/hbermu/Workspace/master/claude-midjourney-prompts/images/[filename]`
+   `https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/[filename]`
 5. When saving to `Characters.csv`, always maintain alphabetical order by `name`, then by `pose` within the same character.
 
 ### Negative Prompting Guide (`--no` and `::` weights)
