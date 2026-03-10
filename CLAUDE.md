@@ -162,7 +162,7 @@ The user works with two main styles:
 3. **Ask the user** for any missing details (role, shot type, style, etc.). Use clickable options when possible.
 4. **If it's a canonical D&D character**, research their official appearance online before generating the prompt.
 5. **Generate the prompt** following the defined structure.
-6. **As the last step**: determine the expected filename using the naming convention (`images/[name-lowercase]-[pose-short].png`), display it clearly to the user, and immediately update `Characters.csv` with the new entry (name, pose, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
+6. **As the last step**: determine the expected filename using the naming convention (`images/[name-lowercase]-[pose-short].png`), display it clearly to the user, and immediately update `Characters.csv` with the new entry (name, pose, ar, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
 7. **After receiving the image**, evaluate fidelity and suggest corrections if needed.
 
 ### Prompt output file
@@ -247,6 +247,7 @@ Prefer positive: explicitly describe gender in the prompt body ("female elven wo
 |--------|-------------|
 | `name` | Character name(s). For group shots: `"Isis, Kael"` |
 | `pose` | `base` for the main reference image, or a short action description (`fireball`, `sitting`, `talking`, etc.) |
+| `ar` | Aspect ratio used for this image (e.g., `2:3`, `16:9`, `16:10`, `4:5`, `1:1`) |
 | `url` | Image URL |
 
 - **`pose: base`** is the canonical reference image for a character — always use this URL for `--oref` when generating new images of that character.

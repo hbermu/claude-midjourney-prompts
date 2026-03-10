@@ -1,4 +1,4 @@
-name,pose,url
-Isis,base,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-base.png
-Isis,city-night,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-city-night.png
-Isis,fireball,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-fireball.png
+name,pose,ar,url
+Isis,base,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-base.png
+Isis,city-night,16:10,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-city-night.png
+Isis,fireball,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-fireball.png
