@@ -44,7 +44,10 @@ Always follow this base structure:
 | Characters / NPCs (portrait) | 2:3 | `--ar 2:3` |
 | Monsters / Creatures | 4:5 or 2:3 | `--ar 4:5` |
 | Scenes / Encounters (panoramic) | 16:9 | `--ar 16:9` |
+| Player screen display (widescreen) | 16:10 | `--ar 16:10` |
 | Objects / Items | 1:1 | `--ar 1:1` |
+
+> **Player screen mode:** When the user says the image is for displaying to players on their screen (keywords: "pantalla", "jugadores", "player screen", "16:10"), use `--ar 16:10` regardless of the content type.
 
 ### Image Composition Parameters
 | Parameter | Alias | Range | Default | Description |
@@ -159,7 +162,8 @@ The user works with two main styles:
 3. **Ask the user** for any missing details (role, shot type, style, etc.). Use clickable options when possible.
 4. **If it's a canonical D&D character**, research their official appearance online before generating the prompt.
 5. **Generate the prompt** following the defined structure.
-6. **After receiving the image**, evaluate fidelity and suggest corrections if needed.
+6. **As the last step**: determine the expected filename using the naming convention (`images/[name-lowercase]-[pose-short].png`), display it clearly to the user, and immediately update `Characters.csv` with the new entry (name, pose, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
+7. **After receiving the image**, evaluate fidelity and suggest corrections if needed.
 
 ### Prompt output file
 
@@ -169,12 +173,11 @@ The user works with two main styles:
 
 ### After validating an image:
 
-1. If the user is satisfied, ask if they want to save it to `Characters.csv`.
-2. The user will download the upscaled image and add it to `images/` in the repo.
-3. File naming convention: `images/[name-lowercase]-[pose].png` (e.g., `images/isis-base.png`, `images/isis-fireball.png`). For groups, join names with a hyphen: `images/isis-kael-talking.png`.
-4. The permanent GitHub raw URL to store in `Characters.csv` follows this pattern:
+1. The user will download the upscaled image and place it in `images/` using the filename already provided.
+2. File naming convention: `images/[name-lowercase]-[pose].png` (e.g., `images/isis-base.png`, `images/isis-fireball.png`). For groups, join names with a hyphen: `images/isis-kael-talking.png`.
+3. The permanent GitHub raw URL stored in `Characters.csv` follows this pattern:
    `https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/[filename]`
-5. When saving to `Characters.csv`, always maintain alphabetical order by `name`, then by `pose` within the same character.
+4. `Characters.csv` is already updated — no further action needed unless the pose name changes.
 
 ### Negative Prompting Guide (`--no` and `::` weights)
 
