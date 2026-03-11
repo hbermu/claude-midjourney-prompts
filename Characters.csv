@@ -1,14 +1,15 @@
 name,type,pose,ar,url
-Astra Sirra-el,PJ,base,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/astra_sirrael-base.png
-Dain Tarmogf,PJ,death_army,16:9,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/dain_tarmogf-death_army.png
-Dain Tarmogf,PJ,base,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/dain_tarmogf-base.png
-Ember Willowsping,PJ,base,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/ember_willowsping-base.png
-Ildina Trydydd,PJ,base,1:1,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/ildina_trydydd-base.png
-Isis,NPC,base,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-base.png
-Isis,NPC,city-night,16:10,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-city-night.png
-Isis,NPC,fireball,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-fireball.png
-Shad'ark,PJ,base,3:4,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/shadark-base.png
-Tristan Gildedthorn,PJ,base,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/tristan_gildedthorn-base.png
-Uruk P.,NPC,base,4:5,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/uruk_p-base.png
-Uruk P.,NPC,tavern,16:10,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/uruk_p-tavern.png
-Zarina Glitterrblood,PJ,base,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/zarina_glitterrblood-base.png
+Astra Sirra-el,PJ,overview,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/pj/astra_sirrael-overview.png
+Dain Tarmogf,PJ,death_army,16:9,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/pj/dain_tarmogf-death_army.png
+Dain Tarmogf,PJ,overview,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/pj/dain_tarmogf-overview.png
+Ember Willowsping,PJ,overview,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/pj/ember_willowsping-overview.png
+Ildina Trydydd,PJ,overview,1:1,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/pj/ildina_trydydd-overview.png
+Isis,NPC,overview,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/npc/isis-overview.png
+Isis,NPC,city-night,16:10,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/npc/isis-city-night.png
+Isis,NPC,fireball,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/npc/isis-fireball.png
+Pandemos,Place,overview,16:10,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/place/pandemos-overview.png
+Shad'ark,PJ,overview,3:4,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/pj/shadark-overview.png
+Tristan Gildedthorn,PJ,overview,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/pj/tristan_gildedthorn-overview.png
+Uruk P.,NPC,overview,4:5,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/npc/uruk_p-overview.png
+Uruk P.,NPC,tavern,16:10,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/npc/uruk_p-tavern.png
+Zarina Glitterrblood,PJ,overview,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/pj/zarina_glitterrblood-overview.png

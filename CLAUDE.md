@@ -48,10 +48,13 @@ Always follow this base structure:
 | Characters / NPCs (portrait) | 2:3 | `--ar 2:3` |
 | Monsters / Creatures | 4:5 or 2:3 | `--ar 4:5` |
 | Scenes / Encounters (panoramic) | 16:9 | `--ar 16:9` |
+| **Places / Locations (type: place)** | **16:10** | **`--ar 16:10`** |
 | Player screen display (widescreen) | 16:10 | `--ar 16:10` |
 | Objects / Items | 1:1 | `--ar 1:1` |
 
 > **Player screen mode:** When the user says the image is for displaying to players on their screen (keywords: "pantalla", "jugadores", "player screen", "16:10"), use `--ar 16:10` regardless of the content type.
+
+> **Places / Locations:** Any image tagged as type `Place` in `Characters.csv` MUST use `--ar 16:10` by default, unless the user explicitly specifies otherwise. Place images are stored in `images/place/`.
 
 ### Image Composition Parameters
 | Parameter | Alias | Range | Default | Description |
@@ -168,9 +171,10 @@ The user works with two main styles:
 5. **Generate the prompt** following the defined structure.
 6. **As the last step**: determine the expected filename using the naming convention:
    - Compound names: use `_` between name parts, `-` before the pose (e.g., `uruk_p-tavern.png`).
-   - Single names: use `-` before the pose (e.g., `isis-base.png`).
-   - Display just the filename to the user (e.g., `uruk_p-tavern.png`) — do NOT include the `images/` path prefix.
-   - Then immediately update `Characters.csv` with the new entry (name, type, pose, ar, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
+   - Single names: use `-` before the pose (e.g., `isis-overview.png`).
+   - Display just the filename to the user (e.g., `uruk_p-tavern.png`) — do NOT include the directory prefix.
+   - For places, use a short descriptive name (e.g., `pandemos-overview.png`).
+   - Then immediately update `Characters.csv` with the new entry (name, type, pose, ar, GitHub raw URL). Use the correct subdirectory: `images/pj/` for PJs, `images/npc/` for NPCs, `images/place/` for Places. Do this even before the user validates the image — iterations will reuse the same entry.
 7. **After receiving the image**, evaluate fidelity and suggest corrections if needed.
 
 ### Prompt output file
@@ -181,13 +185,19 @@ The user works with two main styles:
 
 ### After validating an image:
 
-1. The user will download the upscaled image and place it in `images/` using the filename already provided.
+1. The user will download the upscaled image and place it in the appropriate subdirectory:
+   - **PJ** → `images/pj/`
+   - **NPC** → `images/npc/`
+   - **Place** → `images/place/`
 2. File naming convention:
-   - Single names: `images/[name]-[pose].png` (e.g., `images/isis-base.png`).
-   - Compound names/surnames: `images/[name_with_underscores]-[pose].png` (e.g., `images/uruk_p-base.png`, `images/jasiverino_bimcplearino-base.png`).
-   - For group shots, join names with a hyphen: `images/isis-kael-talking.png`.
+   - Single names: `[name]-[pose].png` (e.g., `isis-overview.png`).
+   - Compound names/surnames: `[name_with_underscores]-[pose].png` (e.g., `uruk_p-overview.png`, `jasiverino_bimcplearino-overview.png`).
+   - For group shots, join names with a hyphen: `isis-kael-talking.png`.
+   - For places, use a short descriptive name: `pandemos-overview.png`.
 3. The permanent GitHub raw URL stored in `Characters.csv` follows this pattern:
-   `https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/[filename]`
+   - PJ: `https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/pj/[filename]`
+   - NPC: `https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/npc/[filename]`
+   - Place: `https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/place/[filename]`
 4. `Characters.csv` is already updated — no further action needed unless the pose name changes.
 
 ### Negative Prompting Guide (`--no` and `::` weights)
