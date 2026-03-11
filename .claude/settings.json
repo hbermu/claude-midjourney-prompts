@@ -4,6 +4,10 @@
   },
   "permissions": {
     "allow": [
+      "WebSearch",
+      "Bash(git add:*)",
+      "Bash(git remote:*)",
+      "Bash(git commit:*)",
       "Write(/Users/hbermudez/Workspace/claude-midjourney-prompts/PROMPT.md)",
       "Bash(cat > /Users/hbermudez/Workspace/claude-midjourney-prompts/PROMPT.md*)"
     ]
