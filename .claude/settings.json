@@ -1,5 +1,11 @@
 {
   "env": {
     "CLAUDE_CODE_USE_BEDROCK": "0"
+  },
+  "permissions": {
+    "allow": [
+      "Write(/Users/hbermudez/Workspace/claude-midjourney-prompts/PROMPT.md)",
+      "Bash(cat > /Users/hbermudez/Workspace/claude-midjourney-prompts/PROMPT.md*)"
+    ]
   }
 }

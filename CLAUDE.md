@@ -256,13 +256,17 @@ When the user wants two or more existing characters in the same image (talking, 
 
 ### Syntax
 
-Provide both `base` URLs space-separated in a single `--oref`:
+**Multiple `--oref` is NOT supported in V7** ("Multiple Omni References aren't supported").
+
+The correct approach: use `--oref` for the **primary character** and put the **secondary character's image URL as an image prompt** at the very start of the `/imagine` command:
 
 ```
---oref URL_CHAR1 URL_CHAR2 --ow 100
+/imagine URL_CHAR2 [text prompt] --oref URL_CHAR1 --ow 120 --iw 1
 ```
 
-The `--ow` weight applies globally to all oref references. If fidelity is too low, raise it to `--ow 150-200`.
+- `--oref` → primary character (the one whose face/appearance matters most)
+- Image prompt at the start → secondary character, weight controlled by `--iw` (0.5–1.5)
+- `--iw 1` is a safe default. Lower = text dominates, higher = image dominates.
 
 ### Prompt writing rules for multi-character scenes
 
@@ -275,7 +279,7 @@ The `--ow` weight applies globally to all oref references. If fidelity is too lo
 ### Example structure
 
 ```
-/imagine [artwork type] of [Character A description] and [Character B description], [Character A position + action], [Character B position + action], [environment], [lighting/atmosphere], [art style + artists] --ar 16:9 --s 400 --q 2 --exp 15 --oref URL_A URL_B --ow 120
+/imagine URL_SECONDARY [artwork type] of [Character A description] and [Character B description], [Character A position + action], [Character B position + action], [environment], [lighting/atmosphere], [art style + artists] --ar 16:9 --s 400 --q 2 --exp 15 --iw 1 --oref URL_PRIMARY --ow 120
 ```
 
 ### Known limitations
