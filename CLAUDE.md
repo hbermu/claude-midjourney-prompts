@@ -11,6 +11,10 @@ You are a prompt engineer specialized in generating Midjourney images for Dungeo
 3. **Always consult the support files** before generating:
    - `.claude/memory/mistakes.md` — to avoid repeating past mistakes.
    - `Characters.csv` — to use `--oref` if the character already exists (V7: `--cref` is not supported).
+4. **When naming image files**, follow the naming convention strictly:
+   - Use `_` to separate parts of a compound name or surname (e.g., `uruk_p`, `jasiverino_bimcplearino_amagadino`).
+   - Use `-` to separate the full name from the scene/pose (e.g., `uruk_p-base.png`, `uruk_p-tavern.png`).
+   - Single names use `-` only between name and pose (e.g., `isis-base.png`).
 4. **Validate every generated image** by comparing it against official lore descriptions if the character is canonical (search the internet if needed).
 
 ## Prompt Structure
@@ -162,7 +166,11 @@ The user works with two main styles:
 3. **Ask the user** for any missing details (role, shot type, style, etc.). Use clickable options when possible.
 4. **If it's a canonical D&D character**, research their official appearance online before generating the prompt.
 5. **Generate the prompt** following the defined structure.
-6. **As the last step**: determine the expected filename using the naming convention (`[name-lowercase]-[pose-short].png`), display it clearly to the user **as just the filename** (e.g., `uruk-p-tavern.png`) — do NOT include the `images/` path prefix. Then immediately update `Characters.csv` with the new entry (name, pose, ar, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
+6. **As the last step**: determine the expected filename using the naming convention:
+   - Compound names: use `_` between name parts, `-` before the pose (e.g., `uruk_p-tavern.png`).
+   - Single names: use `-` before the pose (e.g., `isis-base.png`).
+   - Display just the filename to the user (e.g., `uruk_p-tavern.png`) — do NOT include the `images/` path prefix.
+   - Then immediately update `Characters.csv` with the new entry (name, type, pose, ar, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
 7. **After receiving the image**, evaluate fidelity and suggest corrections if needed.
 
 ### Prompt output file
@@ -174,7 +182,10 @@ The user works with two main styles:
 ### After validating an image:
 
 1. The user will download the upscaled image and place it in `images/` using the filename already provided.
-2. File naming convention: `images/[name-lowercase]-[pose].png` (e.g., `images/isis-base.png`, `images/isis-fireball.png`). For groups, join names with a hyphen: `images/isis-kael-talking.png`.
+2. File naming convention:
+   - Single names: `images/[name]-[pose].png` (e.g., `images/isis-base.png`).
+   - Compound names/surnames: `images/[name_with_underscores]-[pose].png` (e.g., `images/uruk_p-base.png`, `images/jasiverino_bimcplearino-base.png`).
+   - For group shots, join names with a hyphen: `images/isis-kael-talking.png`.
 3. The permanent GitHub raw URL stored in `Characters.csv` follows this pattern:
    `https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/[filename]`
 4. `Characters.csv` is already updated — no further action needed unless the pose name changes.
@@ -246,6 +257,7 @@ Prefer positive: explicitly describe gender in the prompt body ("female elven wo
 | Column | Description |
 |--------|-------------|
 | `name` | Character name(s). For group shots: `"Isis, Kael"` |
+| `type` | Character type: `PJ` (player character), `NPC`, or `Monster` |
 | `pose` | `base` for the main reference image, or a short action description (`fireball`, `sitting`, `talking`, etc.) |
 | `ar` | Aspect ratio used for this image (e.g., `2:3`, `16:9`, `16:10`, `4:5`, `1:1`) |
 | `url` | Image URL |
