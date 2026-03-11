@@ -162,13 +162,13 @@ The user works with two main styles:
 3. **Ask the user** for any missing details (role, shot type, style, etc.). Use clickable options when possible.
 4. **If it's a canonical D&D character**, research their official appearance online before generating the prompt.
 5. **Generate the prompt** following the defined structure.
-6. **As the last step**: determine the expected filename using the naming convention (`images/[name-lowercase]-[pose-short].png`), display it clearly to the user, and immediately update `Characters.csv` with the new entry (name, pose, ar, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
+6. **As the last step**: determine the expected filename using the naming convention (`[name-lowercase]-[pose-short].png`), display it clearly to the user, and immediately update `Characters.csv` with the new entry (name, pose, ar, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
 7. **After receiving the image**, evaluate fidelity and suggest corrections if needed.
 
 ### Prompt output file
 
 - Always write the generated prompt to a file called `PROMPT.md` in the repo root.
-- Before writing a new prompt, **delete the existing `PROMPT.md`** if it exists, then create it fresh.
+- `PROMPT.md` can always be overwritten directly — no need to read it first or delete it.
 - The file must contain only the prompt, wrapped in a code block.
 
 ### After validating an image:
