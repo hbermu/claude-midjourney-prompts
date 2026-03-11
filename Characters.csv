@@ -1,5 +1,6 @@
 name,pose,ar,url
 Isis,base,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-base.png
-Uruk P.,bar,4:5,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/uruk-p-bar.png
+Uruk P.,base,4:5,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/uruk-p-base.png
+Uruk P.,tavern,16:10,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/uruk-p-tavern.png
 Isis,city-night,16:10,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-city-night.png
 Isis,fireball,2:3,https://raw.githubusercontent.com/hbermu/claude-midjourney-prompts/main/images/isis-fireball.png

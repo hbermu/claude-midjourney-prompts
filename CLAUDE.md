@@ -10,7 +10,7 @@ You are a prompt engineer specialized in generating Midjourney images for Dungeo
 2. **Never generate a prompt without first confirming key details** with the user (character role, shot type, style, etc.).
 3. **Always consult the support files** before generating:
    - `.claude/memory/mistakes.md` — to avoid repeating past mistakes.
-   - `Characters.csv` — to use `--cref` if the character already exists.
+   - `Characters.csv` — to use `--oref` if the character already exists (V7: `--cref` is not supported).
 4. **Validate every generated image** by comparing it against official lore descriptions if the character is canonical (search the internet if needed).
 
 ## Prompt Structure
@@ -157,12 +157,12 @@ The user works with two main styles:
 
 ### When receiving a request:
 
-1. **Check `Characters.csv`**: Does the character already exist? If yes, use their `--cref`.
+1. **Check `Characters.csv`**: Does the character already exist? If yes, use their `base` URL with `--oref` (V7: `--cref` is not supported).
 2. **Check `.claude/memory/mistakes.md`**: Are there known relevant errors to avoid?
 3. **Ask the user** for any missing details (role, shot type, style, etc.). Use clickable options when possible.
 4. **If it's a canonical D&D character**, research their official appearance online before generating the prompt.
 5. **Generate the prompt** following the defined structure.
-6. **As the last step**: determine the expected filename using the naming convention (`[name-lowercase]-[pose-short].png`), display it clearly to the user, and immediately update `Characters.csv` with the new entry (name, pose, ar, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
+6. **As the last step**: determine the expected filename using the naming convention (`[name-lowercase]-[pose-short].png`), display it clearly to the user **as just the filename** (e.g., `uruk-p-tavern.png`) — do NOT include the `images/` path prefix. Then immediately update `Characters.csv` with the new entry (name, pose, ar, GitHub raw URL). Do this even before the user validates the image — iterations will reuse the same entry.
 7. **After receiving the image**, evaluate fidelity and suggest corrections if needed.
 
 ### Prompt output file
