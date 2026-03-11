@@ -250,6 +250,48 @@ Prefer positive: explicitly describe gender in the prompt body ("female elven wo
 | Very long `--no` lists (8+ words) | Diminishing returns, model confusion | Max 3-6 words; rephrase the rest positively |
 | Multiple `--no` flags | Only the last one is used | Single `--no` with comma-separated words |
 
+## Multi-Character Scenes
+
+When the user wants two or more existing characters in the same image (talking, fighting, drinking, negotiating, etc.):
+
+### Syntax
+
+Provide both `base` URLs space-separated in a single `--oref`:
+
+```
+--oref URL_CHAR1 URL_CHAR2 --ow 100
+```
+
+The `--ow` weight applies globally to all oref references. If fidelity is too low, raise it to `--ow 150-200`.
+
+### Prompt writing rules for multi-character scenes
+
+1. **Describe each character explicitly** — do not rely on `--oref` alone. Name each character's distinguishing features in the prompt body (hair, clothing, race, gender).
+2. **Anchor each character to a position**: "on the left", "on the right", "in the foreground", "seated across the table".
+3. **Describe the interaction explicitly**: "clinking goblets", "locked in sword combat", "whispering conspiratorially", "bowing before a king seated on a throne".
+4. **Keep `--ow` moderate** (100-150) — too high locks appearance but produces stiff unnatural poses; too low loses likeness.
+5. **Raise `--s` slightly** (350-450) to help MJ compose a natural interaction between figures.
+
+### Example structure
+
+```
+/imagine [artwork type] of [Character A description] and [Character B description], [Character A position + action], [Character B position + action], [environment], [lighting/atmosphere], [art style + artists] --ar 16:9 --s 400 --q 2 --exp 15 --oref URL_A URL_B --ow 120
+```
+
+### Known limitations
+
+- Fidelity degrades with 3+ characters — use 2 at a time when possible.
+- MJ may blend features or swap faces between characters. If this happens: raise `--ow`, add more descriptive text distinguishing each character, or reduce `--exp`.
+- For 3+ characters, prioritize the most important one with a separate `--oref` at higher `--ow`, and describe the others only in text.
+
+### CSV and file naming for group shots
+
+- `name` field: comma-separated in quotes — `"Isis, Dain Tarmogf"`
+- Filename: join sanitized names with hyphen — `isis-dain_tarmogf-negotiation.png`
+- Sort alphabetically by the first character's name.
+
+---
+
 ## Recurring NPC Management with --oref
 
 ### Characters.csv structure
