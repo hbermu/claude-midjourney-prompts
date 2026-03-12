@@ -24,6 +24,10 @@ Keep `--iw` between 0.5 and 1.5. Lower = text dominates, higher = image referenc
 **What happened:** Used one character as image prompt at the start and the other with `--oref`. MJ was unable to correctly represent both characters simultaneously — it blended or ignored one of them.
 **Correct behavior:** There is currently no reliable way in MJ V7 to generate a scene with two specific pre-existing characters that are both recognizable. Do not attempt multi-character reference scenes. Inform the user of this limitation before generating.
 
+## Never omit --no when generating character portraits
+**What happened:** Generated a portrait without `--no` flag. MJ added unwanted elements and cropped the composition incorrectly (bust instead of full body).
+**Correct behavior:** Always include `--no photo, realistic, cropped, bust, headshot` as a baseline for character portraits. Add specific exclusions based on what the character should NOT have (e.g., `--no dark, gloomy` for colorful characters). Never skip `--no` on character images.
+
 ## --cref is not compatible with V7
 **What happened:** Used `--cref` in a V7 prompt, resulting in error "Invalid parameter -- cref is not compatible with --version 7".
 **Correct behavior:** In V7, use `--oref [URL] --ow [0-1000]` instead of `--cref`/`--cw`. `--oref` is the V7 equivalent for character references.
