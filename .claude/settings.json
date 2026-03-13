@@ -8,9 +8,10 @@
       "Bash(git add:*)",
       "Bash(git remote:*)",
       "Bash(git commit:*)",
-      "Write(/Users/hbermudez/Workspace/claude-midjourney-prompts/PROMPT.md)",
+      "Bash(cat > /Users/hbermudez/Workspace/claude-midjourney-prompts/PROMPT.md**)",
       "Edit(/Users/hbermudez/Workspace/claude-midjourney-prompts/PROMPT.md)",
-      "Bash(cat > /Users/hbermudez/Workspace/claude-midjourney-prompts/PROMPT.md**)"
+      "Update(Characters.csv)",
+      "Write(/Users/hbermudez/Workspace/claude-midjourney-prompts/PROMPT.md)"
     ]
   }
 }

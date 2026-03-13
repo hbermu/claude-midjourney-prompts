@@ -7,3 +7,4 @@ Main reference for persistent context across sessions.
 
 ## Files
 - [mistakes.md](mistakes.md) — Documented mistakes and how to avoid them
+- [feedback_prompt_workflow.md](feedback_prompt_workflow.md) — Always show filename at end of prompt messages
