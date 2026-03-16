@@ -20,9 +20,9 @@ Documented mistakes to avoid repeating them.
 ```
 Keep `--iw` between 0.5 and 1.5. Lower = text dominates, higher = image reference dominates.
 
-## Mixing two characters via image prompt + --oref does not work reliably
-**What happened:** Used one character as image prompt at the start and the other with `--oref`. MJ was unable to correctly represent both characters simultaneously — it blended or ignored one of them.
-**Correct behavior:** There is currently no reliable way in MJ V7 to generate a scene with two specific pre-existing characters that are both recognizable. Do not attempt multi-character reference scenes. Inform the user of this limitation before generating.
+## Multi-character reference scenes are unreliable in V7
+**What happened:** Used one character as image prompt at the start and the other with `--oref`. MJ frequently blended or ignored one character's likeness.
+**Correct behavior:** Multi-character reference scenes are unreliable in V7. Always warn the user of this limitation before attempting. If they want to proceed, use the best-effort approach from the Multi-Character Scenes section of CLAUDE.md (one `--oref` for primary + image prompt URL for secondary). Do not promise recognizable results.
 
 ## Never omit --no when generating character portraits
 **What happened:** Generated a portrait without `--no` flag. MJ added unwanted elements and cropped the composition incorrectly (bust instead of full body).
